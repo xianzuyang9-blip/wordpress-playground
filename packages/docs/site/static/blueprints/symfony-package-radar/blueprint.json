@@ -1,0 +1,41 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"landingPage": "/symfony-package-radar/public/index.php",
+	"meta": {
+		"title": "Symfony Package Radar",
+		"description": "A PHP-only Symfony app that demonstrates attribute routing, autowiring, Twig, and HttpClient without downloading WordPress or running a Node/Sass build.",
+		"author": "WordPress Playground",
+		"categories": ["php", "frameworks", "symfony"]
+	},
+	"preferredVersions": {
+		"php": "8.4",
+		"wp": false
+	},
+	"features": {
+		"networking": true
+	},
+	"steps": [
+		{
+			"step": "unzip",
+			"zipFile": {
+				"resource": "url",
+				"url": "https://wordpress.github.io/wordpress-playground/blueprints/symfony-package-radar/symfony-package-radar.zip",
+				"caption": "Downloading the bundled Symfony demo"
+			},
+			"extractToPath": "/wordpress",
+			"progress": {
+				"caption": "Installing Symfony Package Radar"
+			}
+		},
+		{
+			"step": "request",
+			"request": {
+				"method": "GET",
+				"url": "/symfony-package-radar/public/index.php"
+			},
+			"progress": {
+				"caption": "Checking the Symfony route"
+			}
+		}
+	]
+}
